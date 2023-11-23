@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<body>
+<h1 style="color:black; text-align:center;">Your personal Info</h1>
+<h3 style="color:black; text-align:center;"> Welcome {{user.first_name}},here you can find all your personal information stored in this website.</h3>
+<div class="row" style="text-align:center;"><h4>First Name: {{ user.first_name}}</h4></div>
+<div class="row" style="text-align:center;"><h4>Last Name: {{ user.last_name}}</h4></div>
+<div class="row" style="text-align:center;"><h4>Email: {{ user.email }}</h4></div>
+<div class="row" style="text-align:center;"><h4>Date Joined: {{ user.date_joined }}</h4></div>
+</body>
+{% endblock %}

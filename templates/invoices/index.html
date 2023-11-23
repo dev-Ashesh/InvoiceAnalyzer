@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 style="color: black;">Overview of your Invoices</h1>
+    {% include 'alerts.html' %}
+    <div class="container" style="white-space: nowrap;">
+        <span style="display: inline-block; white-space: normal;">{{ graph|safe }}</span>
+        <span style="display: inline-block; white-space: normal; ">{{ graph2|safe }}</span>
+    </div>
+    <h3 style="color: black;">Your Invoices</h3>
+    <iframe src="list_invoices" frameborder="0" width="1000" height="500"></iframe>
+</div>
+{% endblock %}

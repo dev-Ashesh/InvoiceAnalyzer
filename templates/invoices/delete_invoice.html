@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h3 style="color: black;">Are you sure you want to delete the Invoice {{ invoice.invoice_number }}?</h3>
+    <form action="" method="POST">
+        {% csrf_token %}
+        <button class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links" type="submit">Confirm</button>
+    </form>
+</div>
+{% endblock %}

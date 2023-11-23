@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    {% include 'alerts.html' %}
+    <h2 style="color: black;">Please select invoice to upload:</h2>
+
+    <form action="" method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form }}
+        <button class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links" type="submit">Submit</button>
+    </form>
+</div>
+{% endblock %}

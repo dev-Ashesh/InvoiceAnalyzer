@@ -1,0 +1,64 @@
+{%extends 'base.html'%}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <div class="container" style="background-color:; 
+    padding:10px 10px 10px 10px;">
+            <div class="row g-0">
+                <div class="col-sm-6 col-md-8" id="header-text">
+                  {% if user.is_authenticated %}
+                  <div class="box" >
+                    <h1 style="margin-top:0px; color:black;">Welcome {{user.first_name}}!!</h1>
+                     <h5 style="margin-top:0px; color:black;">Lets get started</h5>
+                     <br>
+                  </div>
+                  <a class="btn" href="invoices" style="color: white; background-color: #fd5e14;"type="submit" id="body-link-row">Invoices</a>
+                  {% else %}
+                  <div class="box" >
+                    <h1 style="margin-top:0px; color:black;">Welcome to Invoice Analyser.</h1>
+                     <h5 style="margin-top:0px; color:black;">Are you tired of managing your invoices??</h5>
+                     <h5 style=" color:black;">We help you to store all your invoices in place and analyse the data from the invoices to understand your current expenses.</h5>
+                     <h5 style=" color:black;">Please <a href="accounts/login">Login</a> or  <a href="accounts/register">Register</a> to get started.<h5>
+                     <br>
+                  </div>
+                  <a class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="body-link-row">Discover More</a>
+                  {% endif %}
+                </div>
+              </div>
+    </div>
+    <footer class="site-footer" style="position: fixed;
+    padding: 10px 10px 0px 10px;
+    bottom:0;
+    width: 100%;
+    /* Height of the footer*/ 
+    height: 250px;
+    background: #343a40;">
+      <div class="container" style="color:#fd5e14">
+        <div class="row mb-5">
+          <div class="col-md-3 mb-5" style="color:#fd5e14">
+            <h3>About Us</h3>
+            <p>Invoice Analyser is a web application that allows you to store invoices, extracts data from the invoices and analyse the data. </p>
+            <p><a href="accounts/aboutus">Click here to learn more</a></p>
+          </div>
+
+          <div class="col-md-3 mb-5" style="color:#fd5e14">
+            <h3>Contact</h3> 
+            <ul class="list-ustyled footer link"> 
+              <li class="d-flex">
+              <p class="me-3">Email:</p><p class="text-black">kcashesh0@gmail.com</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="col-md-3 mb-5">
+            <h3>Quick links</h3>
+            <ul class="list-unstyled footer-link">
+              <li><a href="accounts/aboutus">About Us</a></li>
+            </ul>
+          </div>
+
+
+        </div>
+      </div>
+    </footer>
+{% endblock content %}

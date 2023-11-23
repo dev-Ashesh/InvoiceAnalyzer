@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div class="container">
+    <h1 style="color: black;">Invoice {{ invoice.invoice_number }}</h1>
+    <h3 style="color: black;">PO Number {{ invoice.po_number }}</h3>
+    <a href="delete" class="btn" style="color: white; background-color: #fd5e14;"type="submit" id="header-links"> Delete </a>
+    <div class="container" style="white-space: nowrap;">
+        <span style="display: inline-block; white-space: normal;">{{ graph|safe }}</span>
+        <span style="display: inline-block; white-space: normal;">{{ graph2|safe }}</span>
+    </div>
+    <div class="row"><p>Sent To: {{ invoice.to }}</p></div>
+    <div class="row"><p>Total Amount:{{ invoice.total }}</p></div>
+    <div class="row"><p>Invoice Due Date:{{ invoice.due_date }}</P></div>
+    <div class="row"><p>Sent By:{{ invoice.coming_from }}</p></div>
+</div>
+{% endblock %}
